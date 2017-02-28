@@ -31,7 +31,9 @@ return [
             'database' => 'P2017',
             'username' => 'root',
             'password' => 'root',
-            'charset'   => 'utf8'
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix'    => ''
         ]
     ],
 ];
