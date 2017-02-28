@@ -15,6 +15,7 @@ class ArticleMigration extends MigrationAdapter
             $table->string('source');
             $table->date('date_diff');
             $table->boolean('util');
+            $table->boolean('sensible');
             $table->integer('qualite');
             $table->string('type');
             // Required for Eloquent's created_at and updated_at columns
