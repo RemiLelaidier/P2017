@@ -20,12 +20,12 @@ final class HomeController
 
     public function home(Request $request, Response $response, $args)
     {
-        $articles = Article::all();
+        //$articles = Article::all();
 
         $this->logger->info("Home page action dispatched");
         
         $this->view->render($response, 'public_home.twig', array(
-            'articles'  => $articles
+            //'articles'  => $articles
         ));
         return $response;
     }

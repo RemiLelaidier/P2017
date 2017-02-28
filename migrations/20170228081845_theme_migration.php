@@ -1,7 +1,5 @@
 <?php
 
-include 'MigrationAdapter.php';
-
 use \App\Adapter\MigrationAdapter;
 
 class ThemeMigration extends MigrationAdapter
