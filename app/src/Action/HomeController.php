@@ -32,12 +32,12 @@ final class HomeController
      */
     public function home(Request $request, Response $response, $args)
     {
-        print_r($this->themes->get());
+        $themes_json = json_encode($this->themes->get());
 
         $this->logger->info("Home page action dispatched");
         
         $this->view->render($response, 'public_home.twig', array(
-            //'articles'  => $articles
+            'themes'  => $themes_json
         ));
         return $response;
     }
