@@ -16,3 +16,14 @@ h1 {
     font-weight: 200;
     margin-bottom: 0;
 }
+
+table {
+    float: right;
+    border: 1px dotted black;
+}
+
+td {
+    border: 1px solid black;
+    height: 75px;
+    width: 100px;
+}

@@ -11,6 +11,8 @@
     </body>
     <script src='{{ base_url() }}/js/main.js'></script>
     <script>
-        loadThemes({{ themes|raw }})
+        window.onload = function () {
+            loadThemes({{ themes|raw }})
+        }
     </script>
 </html>
