@@ -28,7 +28,7 @@ final class HomeController
      */
     public function home(Request $request, Response $response, $args)
     {
-        $themes_json = html_entity_decode(json_encode(Theme::all()->toArray()));
+        $themes_json = json_encode(Theme::all()->toArray());
 
         $this->logger->info("Home page action dispatched");
         
