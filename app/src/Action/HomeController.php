@@ -7,20 +7,16 @@ use Psr\Log\LoggerInterface;
 use Slim\Http\Request;
 use Slim\Http\Response;
 use App\Model\Article;
+use App\Model\Theme;
 
 final class HomeController
 {
     private $view;
     private $logger;
-    private $articles;
-    private $themes;
 
-    public function __construct(Twig $view, LoggerInterface $logger, Builder $articles, Builder $themes)
-    {
+    public function __construct(Twig $view, LoggerInterface $logger){
         $this->view = $view;
         $this->logger = $logger;
-        $this->articles = $articles;
-        $this->themes = $themes;
     }
 
     /**
@@ -32,7 +28,7 @@ final class HomeController
      */
     public function home(Request $request, Response $response, $args)
     {
-        $themes_json = json_encode($this->themes->get());
+        $themes_json = html_entity_decode(json_encode(Theme::all()->toArray()));
 
         $this->logger->info("Home page action dispatched");
         

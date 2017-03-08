@@ -25,13 +25,13 @@ $container['flash'] = function ($c) {
 };
 
 // ELOQUENT
-$container['db'] = function ($c) {
-    $capsule = new \Illuminate\Database\Capsule\Manager;
-    $capsule->addConnection($c['settings']['db']);
+$capsule = new \Illuminate\Database\Capsule\Manager;
+$capsule->addConnection($container['settings']['db']);
 
-    $capsule->setAsGlobal();
-    $capsule->bootEloquent();
+$capsule->setAsGlobal();
+$capsule->bootEloquent();
 
+$container['db'] = function ($c) use ($capsule){
     return $capsule;
 };
 
@@ -54,7 +54,5 @@ $container['logger'] = function ($c) {
 
 $container[App\Action\HomeController::class] = function ($c) {
     return new App\Action\HomeController(
-        $c->get('view'), $c->get('logger'),
-        $c->get('db')->table('articles'),
-        $c->get('db')->table('themes'));
+        $c->get('view'), $c->get('logger'));
 };
