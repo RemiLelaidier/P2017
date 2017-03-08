@@ -9,6 +9,10 @@ class Article extends Model
     protected $table = 'articles';
 
     public function auteur(){
+        return $this->hasOne('App/Model/User');
+    }
 
+    public function theme(){
+        return $this->hasMany('App/Model/Theme');
     }
 }

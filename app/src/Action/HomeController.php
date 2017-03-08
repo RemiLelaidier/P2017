@@ -12,18 +12,27 @@ final class HomeController
 {
     private $view;
     private $logger;
-    private $table;
+    private $articles;
+    private $themes;
 
-    public function __construct(Twig $view, LoggerInterface $logger, Builder $table)
+    public function __construct(Twig $view, LoggerInterface $logger, Builder $articles, Builder $themes)
     {
         $this->view = $view;
         $this->logger = $logger;
-        $this->table = $table;
+        $this->articles = $articles;
+        $this->themes = $themes;
     }
 
+    /**
+     * Page d'acceuil
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
     public function home(Request $request, Response $response, $args)
     {
-        var_dump($this->table->get());
+        print_r($this->themes->get());
 
         $this->logger->info("Home page action dispatched");
         

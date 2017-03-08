@@ -55,5 +55,6 @@ $container['logger'] = function ($c) {
 $container[App\Action\HomeController::class] = function ($c) {
     return new App\Action\HomeController(
         $c->get('view'), $c->get('logger'),
-        $c->get('db')->table('articles'));
+        $c->get('db')->table('articles'),
+        $c->get('db')->table('themes'));
 };
