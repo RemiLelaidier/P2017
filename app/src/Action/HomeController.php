@@ -28,19 +28,14 @@ final class HomeController
      */
     public function home(Request $request, Response $response, $args)
     {
-        /* TODO  A debugger
-        $article = Article::find(1);
-        $theme = Theme::find(1);
-        $article->themes()->save($theme);*/
-
-        print_r(Article::find(1));
-
+        $articles_json = json_encode(Article::with('themes')->get()->toArray());
         $themes_json = json_encode(Theme::all()->toArray());
 
         $this->logger->info("Home page action dispatched");
         
         $this->view->render($response, 'public_home.twig', array(
-            'themes'  => $themes_json
+            'themes'    => $themes_json,
+            'articles'  => $articles_json
         ));
         return $response;
     }

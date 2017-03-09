@@ -10,6 +10,7 @@ class ArticleMigration extends MigrationAdapter
         $this->schema->create('articles', function(Illuminate\Database\Schema\Blueprint $table){
             // Auto-increment id
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('titre');
             $table->string('description');
             $table->string('source');
@@ -20,6 +21,11 @@ class ArticleMigration extends MigrationAdapter
             $table->string('type');
             // Required for Eloquent's created_at and updated_at columns
             $table->timestamps();
+        });
+
+        $this->schema->create('article_theme', function(Illuminate\Database\Schema\Blueprint $table){
+            $table->integer('article_id');
+            $table->integer('theme_id');
         });
     }
 

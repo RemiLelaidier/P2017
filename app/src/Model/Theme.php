@@ -9,6 +9,6 @@ class Theme extends Model
     protected $table = 'themes';
 
     public function article(){
-        return $this->hasMany('App/Model/Article');
+        return $this->hasMany('App\Model\Article');
     }
 }

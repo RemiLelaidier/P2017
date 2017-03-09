@@ -53,3 +53,8 @@ td:hover:not(.theme_head) {
 .themes input{
     margin: 10px;
 }
+
+.articles{
+    float: left;
+    width: 650px;
+}
