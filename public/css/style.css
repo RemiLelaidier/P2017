@@ -26,4 +26,23 @@ td {
     border: 1px solid black;
     height: 75px;
     width: 100px;
+    padding: 10px;
+    color: darkslategrey;
+    text-align: center;
+    font-size: 13px;
+    border-radius: 2px;
+    transition: all 0.2s ease-in-out;
+}
+
+td:hover:not(.theme_head) {
+    color: white;
+    transform: scale(1.04);
+}
+
+.theme_head{
+    font-size: 30px;
+}
+
+.selected {
+    border: 5px solid yellow;
 }
