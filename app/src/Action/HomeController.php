@@ -28,6 +28,13 @@ final class HomeController
      */
     public function home(Request $request, Response $response, $args)
     {
+        /* TODO  A debugger
+        $article = Article::find(1);
+        $theme = Theme::find(1);
+        $article->themes()->save($theme);*/
+
+        print_r(Article::find(1));
+
         $themes_json = json_encode(Theme::all()->toArray());
 
         $this->logger->info("Home page action dispatched");

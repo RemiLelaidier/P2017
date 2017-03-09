@@ -1,6 +1,8 @@
 <?php
 
 use Phinx\Seed\AbstractSeed;
+use App\Model\Theme;
+use App\Model\Article;
 
 class ArticleSeeder extends AbstractSeed
 {

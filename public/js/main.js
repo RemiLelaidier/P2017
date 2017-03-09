@@ -29,9 +29,9 @@ function loadThemes(themes) {
                 td.style.backgroundColor = "#f9b98f"
             if(themes[identifieur].couleur === "ROUGE")
                 td.style.backgroundColor = "#f59888"
-
+            
             td.addEventListener("click", function () {
-                td.className = "selected"
+                this.className = "selected"
             })
 
             tr.appendChild(td)

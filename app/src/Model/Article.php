@@ -12,7 +12,7 @@ class Article extends Model
         return $this->hasOne('App/Model/User');
     }
 
-    public function theme(){
+    public function themes(){
         return $this->hasMany('App/Model/Theme');
     }
 }
