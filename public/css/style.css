@@ -6,6 +6,7 @@ body {
     text-align: center;
     color: #aaa;
     font-size: 18px;
+    background-color: #f0f0f0;
 }
 
 h1 {
@@ -55,6 +56,38 @@ td:hover:not(.theme_head) {
 }
 
 .articles{
+    background-color: #f0f0f0;
+    padding: 15px;
     float: left;
     width: 650px;
+}
+
+.article{
+    padding: 10px;
+    background-color: #fff;
+    margin: 10px auto 10px auto;
+    border-radius: 2px;
+    box-shadow: #bfbcbc 1px 1px;
+    width: 450px;height: 350px;
+}
+
+.article h1{
+    color: gray;
+    font-size: 50px;
+    margin: 0;
+}
+
+.article__tags{
+    display: flex;
+    padding: 10px;
+}
+
+.article__tag{
+    color: black;
+    margin: 1px;
+    width: 33%;
+    height: 40px;
+    font-size: 12px;
+    text-align: center;
+    padding: 0px 1px 10px 1px;
 }

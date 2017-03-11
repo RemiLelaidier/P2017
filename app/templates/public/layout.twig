@@ -2,7 +2,8 @@
     <head>
         <meta charset="utf-8"/>
         <title>Slim 3</title>
-        <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="{{ base_url() }}/css/materialize.css"  media="screen,projection"/>
         <link href='{{ base_url() }}/css/style.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
@@ -10,10 +11,15 @@
         {% endblock %}
     </body>
     <script src='{{ base_url() }}/js/main.js'></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{{ base_url() }}/js/materialize.js"></script>
     <script>
         window.onload = function () {
             loadThemes({{ themes|raw }})
             loadArticles({{ articles|raw }})
         }
+        $(".button-collapse").sideNav({
+            edge: 'right'
+        });
     </script>
 </html>

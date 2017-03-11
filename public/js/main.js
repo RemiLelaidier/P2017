@@ -1,42 +1,48 @@
 /**
+ * Variables Couleurs
+ */
+var bleu = "#2196f3"
+    vert = "#4caf50"
+    indigo = "#009688"
+    violet = "#9c27b0"
+    jaune = "#cddc39"
+    orange = "#ff9800"
+    rouge = "#f44336"
+
+/**
  * Fonction pour charger les themes
  * @param themes
  */
 function loadThemes(themes) {
-    for (i = 0; i < themes.length / 5; i++){
-        var tr = document.createElement('TR')
-        for(j = 0; j < 5; j++){
+    var liste = document.getElementById('slide-out')
+    for (i = 0; i < themes.length; i++){
+        var li = document.createElement('LI')
 
-            // identifieur JSON
-            identifieur = i*5 + j
+        var a = document.createElement('A')
+        a.innerHTML = themes[i].titre
+        a.title = themes[i].description
 
-            var td = document.createElement('TD')
-            td.innerHTML = themes[identifieur].titre
-            td.title = themes[identifieur].description
+        // Couleurs
+        if(themes[i].couleur === "BLUE")
+            a.style.backgroundColor = bleu
+        if(themes[i].couleur === "VERT")
+            a.style.backgroundColor = vert
+        if(themes[i].couleur === "INDIGO")
+            a.style.backgroundColor = indigo
+        if(themes[i].couleur === "VIOLET")
+            a.style.backgroundColor = violet
+        if(themes[i].couleur === "JAUNE")
+            a.style.backgroundColor = jaune
+        if(themes[i].couleur === "ORANGE")
+            a.style.backgroundColor = orange
+        if(themes[i].couleur === "ROUGE")
+            a.style.backgroundColor = rouge
 
-            // Couleurs
-            if(themes[identifieur].couleur === "BLUE")
-                td.style.backgroundColor = "#77c9d2"
-            if(themes[identifieur].couleur === "VERT")
-                td.style.backgroundColor = "#bbdeab"
-            if(themes[identifieur].couleur === "INDIGO")
-                td.style.backgroundColor = "#acb9dd"
-            if(themes[identifieur].couleur === "VIOLET")
-                td.style.backgroundColor = "#d49fb8"
-            if(themes[identifieur].couleur === "JAUNE")
-                td.style.backgroundColor = "#fed899"
-            if(themes[identifieur].couleur === "ORANGE")
-                td.style.backgroundColor = "#f9b98f"
-            if(themes[identifieur].couleur === "ROUGE")
-                td.style.backgroundColor = "#f59888"
-
-            td.addEventListener("click", function () {
-                this.className = "selected"
-            })
-
-            tr.appendChild(td)
-        }
-        document.getElementById('liste').appendChild(tr)
+        /*a.addEventListener("click", function () {
+            this.className = "selected"
+        })*/
+        li.appendChild(a)
+        liste.appendChild(li)
     }
 }
 
@@ -58,34 +64,36 @@ function loadArticles(articles) {
         lien.innerHTML = articles[i].source
 
         var tags = document.createElement('DIV')
+        tags.className = "article__tags"
         list_themes = articles[i].themes
         for(j = 0; j < list_themes.length; j++){
             var theme = document.createElement('DIV')
+            theme.className = "article__tag"
 
             if(list_themes[j].couleur === "BLUE")
-                theme.style.backgroundColor = "#77c9d2"
+                theme.style.backgroundColor = bleu
             if(list_themes[j].couleur === "VERT")
-                theme.style.backgroundColor = "#bbdeab"
+                theme.style.backgroundColor = vert
             if(list_themes[j].couleur === "INDIGO")
-                theme.style.backgroundColor = "#acb9dd"
+                theme.style.backgroundColor = indigo
             if(list_themes[j].couleur === "VIOLET")
-                theme.style.backgroundColor = "#d49fb8"
+                theme.style.backgroundColor = violet
             if(list_themes[j].couleur === "JAUNE")
-                theme.style.backgroundColor = "#fed899"
+                theme.style.backgroundColor = jaune
             if(list_themes[j].couleur === "ORANGE")
-                theme.style.backgroundColor = "#f9b98f"
+                theme.style.backgroundColor = orange
             if(list_themes[j].couleur === "ROUGE")
-                theme.style.backgroundColor = "#f59888"
+                theme.style.backgroundColor = rouge
 
             p = document.createElement('P')
             p.innerHTML = list_themes[j].titre
 
             theme.appendChild(p)
             tags.appendChild(theme)
-            console.log(theme)
         }
 
         div = document.createElement('DIV')
+        div.className = "article"
         div.appendChild(h1)
         div.appendChild(desc)
         div.appendChild(lien)

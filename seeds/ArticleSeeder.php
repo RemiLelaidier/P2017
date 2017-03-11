@@ -13,7 +13,7 @@ class ArticleSeeder extends AbstractSeed
 
         $dataArticles = array(
             array(
-                'titre' => "article1",
+                'titre' => "Article1",
                 'description' => $faker->text,
                 'source' => $faker->url,
                 'date_diff' => $faker->unixTime,
@@ -23,7 +23,7 @@ class ArticleSeeder extends AbstractSeed
                 'type' => "TXT"
             ),
             array(
-                'titre' => "article2",
+                'titre' => "Article2",
                 'description' => $faker->text,
                 'source' => $faker->url,
                 'date_diff' => $faker->unixTime,
