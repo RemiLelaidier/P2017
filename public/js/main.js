@@ -17,31 +17,46 @@ function loadThemes(themes) {
     var liste = document.getElementById('slide-out')
     for (i = 0; i < themes.length; i++){
         var li = document.createElement('LI')
+        li.className = "row theme"
 
         var a = document.createElement('A')
         a.innerHTML = themes[i].titre
         a.title = themes[i].description
 
+        var container = document.createElement('DIV')
+        container.className = 'theme__title col s10'
+
+        container.appendChild(a)
+        li.appendChild(container)
+
+        var div = document.createElement('DIV')
+        div.className = "theme__card col s1"
+
         // Couleurs
         if(themes[i].couleur === "BLUE")
-            a.style.backgroundColor = bleu
+            div.style.backgroundColor = bleu
         if(themes[i].couleur === "VERT")
-            a.style.backgroundColor = vert
+            div.style.backgroundColor = vert
         if(themes[i].couleur === "INDIGO")
-            a.style.backgroundColor = indigo
+            div.style.backgroundColor = indigo
         if(themes[i].couleur === "VIOLET")
-            a.style.backgroundColor = violet
+            div.style.backgroundColor = violet
         if(themes[i].couleur === "JAUNE")
-            a.style.backgroundColor = jaune
+            div.style.backgroundColor = jaune
         if(themes[i].couleur === "ORANGE")
-            a.style.backgroundColor = orange
+            div.style.backgroundColor = orange
         if(themes[i].couleur === "ROUGE")
-            a.style.backgroundColor = rouge
+            div.style.backgroundColor = rouge
 
         /*a.addEventListener("click", function () {
             this.className = "selected"
         })*/
-        li.appendChild(a)
+        li.appendChild(div)
+
+        var empty = document.createElement('DIV')
+        empty.className = 'theme__empty col s1'
+
+        li.appendChild(empty)
         liste.appendChild(li)
     }
 }
@@ -64,36 +79,48 @@ function loadArticles(articles) {
         lien.innerHTML = articles[i].source
 
         var tags = document.createElement('DIV')
-        tags.className = "article__tags"
+        tags.className = "article__tags row"
         list_themes = articles[i].themes
         for(j = 0; j < list_themes.length; j++){
             var theme = document.createElement('DIV')
-            theme.className = "article__tag"
+            theme.className = "row"
 
+            var texte = document.createElement('DIV')
+            texte.className = 'theme__title col s6'
+            texte.innerHTML = list_themes[j].titre
+            theme.appendChild(texte)
+
+            var card = document.createElement('DIV')
+            card.className = 'theme__card col s2'
             if(list_themes[j].couleur === "BLUE")
-                theme.style.backgroundColor = bleu
+                card.style.backgroundColor = bleu
             if(list_themes[j].couleur === "VERT")
-                theme.style.backgroundColor = vert
+                card.style.backgroundColor = vert
             if(list_themes[j].couleur === "INDIGO")
-                theme.style.backgroundColor = indigo
+                card.style.backgroundColor = indigo
             if(list_themes[j].couleur === "VIOLET")
-                theme.style.backgroundColor = violet
+                card.style.backgroundColor = violet
             if(list_themes[j].couleur === "JAUNE")
-                theme.style.backgroundColor = jaune
+                card.style.backgroundColor = jaune
             if(list_themes[j].couleur === "ORANGE")
-                theme.style.backgroundColor = orange
+                card.style.backgroundColor = orange
             if(list_themes[j].couleur === "ROUGE")
-                theme.style.backgroundColor = rouge
+                card.style.backgroundColor = rouge
+            theme.appendChild(card)
 
-            p = document.createElement('P')
-            p.innerHTML = list_themes[j].titre
+            var empty = document.createElement('DIV')
+            empty.className = 'theme__empty col s1'
+            theme.appendChild(empty)
 
-            theme.appendChild(p)
-            tags.appendChild(theme)
+            var col = document.createElement('DIV')
+            col.className = 'col s6'
+            col.appendChild(theme)
+
+            tags.appendChild(col)
         }
 
         div = document.createElement('DIV')
-        div.className = "article"
+        div.className = "article col s12"
         div.appendChild(h1)
         div.appendChild(desc)
         div.appendChild(lien)

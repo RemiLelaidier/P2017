@@ -18,41 +18,8 @@ h1 {
     margin-bottom: 0;
 }
 
-table {
-    border: 1px dotted black;
-}
-
-td {
-    border: 1px solid black;
-    height: 75px;
-    width: 100px;
-    padding: 10px;
-    color: darkslategrey;
-    text-align: center;
-    font-size: 13px;
-    border-radius: 2px;
-    transition: all 0.2s ease-in-out;
-}
-
-td:hover:not(.theme_head) {
-    color: white;
-    transform: scale(1.04);
-}
-
 .theme_head{
     font-size: 30px;
-}
-
-.selected {
-    border: 5px solid yellow;
-}
-
-.themes{
-    float: right;
-}
-
-.themes input{
-    margin: 10px;
 }
 
 .articles{
@@ -90,4 +57,40 @@ td:hover:not(.theme_head) {
     font-size: 12px;
     text-align: center;
     padding: 0px 1px 10px 1px;
+}
+
+.input-field{margin: 15px;}
+
+.theme__card {
+    height: 1.5vh;
+    transform: skew(30deg);
+    margin-top: 2.5vh;
+    border: 1px solid grey;
+}
+
+.theme__title{
+
+}
+
+.theme__title a{
+    height: auto;
+    padding: 0;
+    line-height: 40px;
+}
+
+.theme__empty{
+
+}
+
+ul#slide-out{
+    background-color: #f0f0f0;
+}
+
+ul#slide-out .theme{
+    margin: 10px;
+    background-color: #FFFFFF;
+}
+
+label{
+    line-height: 10px;
 }

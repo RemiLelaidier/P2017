@@ -2,10 +2,23 @@
 
 {% block body %}
     <ul id="slide-out" class="side-nav">
+        <li><a class="header">FILTRES</a></li>
+        <li>
+            <div class="input-field">
+                <input id="recherche" type="text" class="validate">
+                <label class="active" for="recherche">Rechercher</label>
+            </div>
+        </li>
+        <li>
+            <div class="input-field">
+                <input id="date" type="date" class="datepicker">
+                <label for="date" class="active" for="first_name2">Date</label>
+            </div>
+        </li>
         <li><a class="subheader">Thematiques</a></li>
     </ul>
     <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-    <div id="articles" class="articles">
+    <div id="articles" class="articles row">
 
     </div>
 {% endblock %}
