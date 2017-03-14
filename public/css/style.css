@@ -7,6 +7,9 @@ body {
     color: #aaa;
     font-size: 18px;
     background-color: #f0f0f0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 h1 {
@@ -30,23 +33,24 @@ h1 {
 }
 
 .article{
-    padding: 10px;
+    width: 48% !important;
     background-color: #fff;
-    margin: 10px auto 10px auto;
+    margin: 10px;
     border-radius: 2px;
     box-shadow: #bfbcbc 1px 1px;
-    width: 450px;height: 350px;
+    height: 54vh;
 }
 
 .article h1{
+    margin-left: 15px;
     color: gray;
     font-size: 50px;
-    margin: 0;
+    text-align: left;
+    /* margin: 9px; */
 }
 
 .article__tags{
-    display: flex;
-    padding: 10px;
+
 }
 
 .article__tag{
@@ -59,7 +63,9 @@ h1 {
     padding: 0px 1px 10px 1px;
 }
 
-.input-field{margin: 15px;}
+.input-field{
+    margin: 15px;
+}
 
 .theme__card {
     height: 1.5vh;
@@ -73,6 +79,7 @@ h1 {
 }
 
 .theme__title a{
+    text-align: left;
     height: auto;
     padding: 0;
     line-height: 40px;
@@ -93,4 +100,32 @@ ul#slide-out .theme{
 
 label{
     line-height: 10px;
+}
+
+.button-collapse{
+    position: fixed;
+    right: 3vw;
+    top: 1em;
+}
+
+.search-label{
+    text-align: left;
+}
+
+div#main {
+    width: 98vw;
+    padding: 10px 40px;
+}
+
+.article p{
+    text-align: left;
+    margin-left: 15px;
+}
+
+.article a {
+    margin: 10px;
+}
+
+.menu {
+    width: 90%;
 }

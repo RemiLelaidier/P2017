@@ -32,6 +32,26 @@ class ArticleSeeder extends AbstractSeed
                 'qualite' => 1,
                 'type' => "TXT"
             ),
+            array(
+                'titre' => "Article3",
+                'description' => $faker->text,
+                'source' => $faker->url,
+                'date_diff' => $faker->unixTime,
+                'util' => 1,
+                'sensible' => 0,
+                'qualite' => 1,
+                'type' => "TXT"
+            ),
+            array(
+                'titre' => "Article4",
+                'description' => $faker->text,
+                'source' => $faker->url,
+                'date_diff' => $faker->unixTime,
+                'util' => 1,
+                'sensible' => 0,
+                'qualite' => 1,
+                'type' => "TXT"
+            )
         );
 
         $articlesTab->insert($dataArticles)
@@ -62,6 +82,22 @@ class ArticleSeeder extends AbstractSeed
             array(
                 'article_id' => '2',
                 'theme_id' => '20'
+            ),
+            array(
+                'article_id' => '3',
+                'theme_id' => '26'
+            ),
+            array(
+                'article_id' => '3',
+                'theme_id' => '6'
+            ),
+            array(
+                'article_id' => '4',
+                'theme_id' => '35'
+            ),
+            array(
+                'article_id' => '4',
+                'theme_id' => '10'
             ),
         );
 

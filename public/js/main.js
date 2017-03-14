@@ -14,7 +14,7 @@ var bleu = "#2196f3"
  * @param themes
  */
 function loadThemes(themes) {
-    var liste = document.getElementById('slide-out')
+    var liste = document.querySelector('.menu')
     for (i = 0; i < themes.length; i++){
         var li = document.createElement('LI')
         li.className = "row theme"
@@ -75,52 +75,47 @@ function loadArticles(articles) {
         desc.innerHTML = articles[i].description
 
         lien = document.createElement('A')
+        lien.className = "waves-effect btn left col s12"
         lien.href = articles[i].source
-        lien.innerHTML = articles[i].source
+        lien.innerHTML = "Lien"
 
-        var tags = document.createElement('DIV')
+        tags = document.createElement('DIV')
         tags.className = "article__tags row"
         list_themes = articles[i].themes
+
         for(j = 0; j < list_themes.length; j++){
-            var theme = document.createElement('DIV')
-            theme.className = "row"
+            theme = document.createElement('DIV')
+            theme.className = "col s3 article__tag"
 
-            var texte = document.createElement('DIV')
-            texte.className = 'theme__title col s6'
-            texte.innerHTML = list_themes[j].titre
-            theme.appendChild(texte)
-
-            var card = document.createElement('DIV')
-            card.className = 'theme__card col s2'
+            icon = document.createElement('I')
+            icon.className = "material-icons col s6"
+            icon.innerHTML = "turned_in"
             if(list_themes[j].couleur === "BLUE")
-                card.style.backgroundColor = bleu
+                icon.style.color = bleu
             if(list_themes[j].couleur === "VERT")
-                card.style.backgroundColor = vert
+                icon.style.color = vert
             if(list_themes[j].couleur === "INDIGO")
-                card.style.backgroundColor = indigo
+                icon.style.color = indigo
             if(list_themes[j].couleur === "VIOLET")
-                card.style.backgroundColor = violet
+                icon.style.color = violet
             if(list_themes[j].couleur === "JAUNE")
-                card.style.backgroundColor = jaune
+                icon.style.color = jaune
             if(list_themes[j].couleur === "ORANGE")
-                card.style.backgroundColor = orange
+                icon.style.color = orange
             if(list_themes[j].couleur === "ROUGE")
-                card.style.backgroundColor = rouge
-            theme.appendChild(card)
+                icon.style.color = rouge
+            theme.appendChild(icon)
 
-            var empty = document.createElement('DIV')
-            empty.className = 'theme__empty col s1'
-            theme.appendChild(empty)
+            p = document.createElement('P')
+            p.className = "col s6 texte__tag"
+            p.innerHTML = list_themes[j].titre
+            theme.appendChild(p)
 
-            var col = document.createElement('DIV')
-            col.className = 'col s6'
-            col.appendChild(theme)
-
-            tags.appendChild(col)
+            tags.appendChild(theme)
         }
 
         div = document.createElement('DIV')
-        div.className = "article col s12"
+        div.className = "col s6 article container"
         div.appendChild(h1)
         div.appendChild(desc)
         div.appendChild(lien)

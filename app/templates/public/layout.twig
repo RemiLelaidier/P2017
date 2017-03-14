@@ -7,8 +7,17 @@
         <link href='{{ base_url() }}/css/style.css' rel='stylesheet' type='text/css'>
     </head>
     <body>
-        {% block body %}
-        {% endblock %}
+        <div class="container" id="main">
+            {% block body %}
+            {% endblock %}
+        </div>
+        <footer class="page-footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2017 Copyright Piratons-2017
+                </div>
+            </div>
+        </footer>
     </body>
     <script src='{{ base_url() }}/js/main.js'></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -19,6 +28,7 @@
             loadArticles({{ articles|raw }})
         }
         $(".button-collapse").sideNav({
+            menuWidth: 400,
             edge: 'right'
         });
         $('.datepicker').pickadate({
