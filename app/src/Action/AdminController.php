@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: leetspeakv2
- * Date: 06/04/17
- * Time: 08:49
- */
 
 namespace App\Action;
 
@@ -44,11 +38,13 @@ final class AdminController
      * @return Response
      */
     public function contentForm(Request $request, Response $response, $args){
+        $this->logger->info("Private formContent dispatched");
+        $this->view->render($response, 'adm_contentForm.twig');
         return $response;
     }
 
     /**
-     * Rajoute les infos du contenu dans la BDD
+     * Rajoute les infos du formulaire dans la BDD
      * @param Request $request
      * @param Response $response
      * @param $args
