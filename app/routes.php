@@ -16,7 +16,9 @@ $app->get('/admin', 'App\Action\AdminController:home')
 
 // Content
 $app->group('/content', function (){
-    $this->get('/add', 'App\Action\AdminController:contentForm')
+    $this->get('/list', 'App\Action\AdminController:listContent')
+        ->setName('adm_listContent');
+    $this->get('/add', 'App\Action\AdminController:contentAddForm')
         ->setName('adm_contentForm');
     $this->post('/add', 'App\Action\AdminController:postContent');
 });

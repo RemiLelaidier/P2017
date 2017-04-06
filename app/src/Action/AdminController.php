@@ -2,6 +2,7 @@
 
 namespace App\Action;
 
+use App\Model\Article;
 use Psr\Log\LoggerInterface;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -30,6 +31,25 @@ final class AdminController
         return $response;
     }
 
+    // Content
+    /**
+     * List les contenus editables
+     * @param Request $request
+     * @param Response $response
+     * @param $args
+     * @return Response
+     */
+    public function listContent(Request $request, Response $response, $args){
+        $this->logger->info("Private listContent dispatched");
+
+        $listContent = Article::all();
+
+        $this->view->render($response, 'adm_listContent.twig', array(
+            'articles' => $listContent
+        ));
+        return $response;
+    }
+
     /**
      * Affiche le formulaire permettant d'ajouter un contenu
      * @param Request $request
@@ -37,7 +57,7 @@ final class AdminController
      * @param $args
      * @return Response
      */
-    public function contentForm(Request $request, Response $response, $args){
+    public function contentAddForm(Request $request, Response $response, $args){
         $this->logger->info("Private formContent dispatched");
         $this->view->render($response, 'adm_contentForm.twig');
         return $response;
@@ -53,4 +73,6 @@ final class AdminController
     public function postContent(Request $request, Response $response, $args){
         return $response;
     }
+
+    // Themes TODO
 }

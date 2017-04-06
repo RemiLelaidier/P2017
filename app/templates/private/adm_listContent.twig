@@ -1,0 +1,20 @@
+{% extends "adm_layout.twig" %}
+
+{% block body %}
+    <h1>Listing</h1>
+    <table class="striped">
+        <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th colspan="2">Actions</th>
+        </tr>
+    {% for article in articles %}
+        <tr>
+            <td>{{ article.titre }}</td>
+            <td>{{ article.description }}</td>
+            <td><a class="waves-effect waves-teal btn-flat" href="#"><i class="material-icons">mode_edit</i></a></td>
+            <td><a class="waves-effect waves-teal btn-flat" href="#"><i class="material-icons">delete</i></a></td>
+        </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

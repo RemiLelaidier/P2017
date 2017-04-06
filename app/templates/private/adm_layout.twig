@@ -5,6 +5,7 @@
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="{{ base_url() }}/css/materialize.css"  media="screen,projection"/>
         <link href='{{ base_url() }}/css/admin.css' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
     <nav>
@@ -14,7 +15,7 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="#">Cockpit</a></li>
                 <li><a href="#">Themes</a></li>
-                <li><a href="#">Contenu</a></li>
+                <li><a href="{{ path_for('adm_listContent') }}">Contenu</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="#">Cockpit</a></li>
