@@ -87,9 +87,9 @@ function loadArticles(articles) {
             theme = document.createElement('DIV')
             theme.className = "col s3 article__tag"
 
-            icon = document.createElement('I')
-            icon.className = "material-icons col s6"
-            icon.innerHTML = "turned_in"
+            icon = document.createElement('DIV')
+            icon.className = "chip"
+            icon.innerHTML = list_themes[j].titre
             if(list_themes[j].couleur === "BLUE")
                 icon.style.color = bleu
             if(list_themes[j].couleur === "VERT")
@@ -105,11 +105,6 @@ function loadArticles(articles) {
             if(list_themes[j].couleur === "ROUGE")
                 icon.style.color = rouge
             theme.appendChild(icon)
-
-            p = document.createElement('P')
-            p.className = "col s6 texte__tag"
-            p.innerHTML = list_themes[j].titre
-            theme.appendChild(p)
 
             tags.appendChild(theme)
         }

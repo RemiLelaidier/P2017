@@ -56,3 +56,8 @@ $container[App\Action\HomeController::class] = function ($c) {
     return new App\Action\HomeController(
         $c->get('view'), $c->get('logger'));
 };
+
+$container[App\Action\AdminController::class] = function ($c) {
+    return new App\Action\AdminController(
+        $c->get('view'), $c->get('logger'));
+};

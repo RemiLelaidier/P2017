@@ -22,18 +22,4 @@
     <script src='{{ base_url() }}/js/main.js'></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="{{ base_url() }}/js/materialize.js"></script>
-    <script>
-        window.onload = function () {
-            loadThemes({{ themes|raw }})
-            loadArticles({{ articles|raw }})
-        }
-        $(".button-collapse").sideNav({
-            menuWidth: 400,
-            edge: 'right'
-        });
-        $('.datepicker').pickadate({
-            selectMonths: true, // Creates a dropdown to control month
-            selectYears: 15 // Creates a dropdown of 15 years to control year
-        });
-    </script>
 </html>
